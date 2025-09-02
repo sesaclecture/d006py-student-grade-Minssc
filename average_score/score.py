@@ -42,7 +42,8 @@ def student_average(student_scores: dict):
     # for name, data in student_scores.items():
     #     ret.append((name, sum([int(x) for x in data]) / len(data)))
     # return sorted(ret, key=lambda x: x[1], reverse=True)
-    return sorted([(n, sum([int(x) for x in d]) / len(d)) for n, d in student_scores.items()], key=lambda x: x[1], reverse=True)
+    # return sorted([(n, sum([int(x) for x in d]) / len(d)) for n, d in student_scores.items()], key=lambda x: x[1], reverse=True)
+    return sorted([(n, sum(map(int, d)) / len(d)) for n, d in student_scores.items()], key=lambda x: x[1], reverse=True)
 
 
 if __name__ == "__main__":
